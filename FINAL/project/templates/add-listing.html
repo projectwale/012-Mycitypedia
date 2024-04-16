@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+
+<!-- Mirrored from lion-coders.com/demo/html/MyCitypedia/add-listing.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Jul 2023 14:57:47 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+    <!-- Metas -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="LionCoders" />
+    <!-- Links -->
+    <link rel="icon" type="image/png" href="#" />
+    <!-- google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+    <!-- Plugins CSS -->
+    <link href="../static/css/plugin.css" rel="stylesheet" />
+    <!-- style CSS -->
+    <link href="../static/css/style.css" rel="stylesheet" />
+    <link href="../static/css/form.css" rel="stylesheet" />
+    <!--color switcher css-->
+    <link rel="stylesheet" href="../static/css/switcher/skin-aqua.css" media="screen" id="style-colors" />
+    <!-- Document Title -->
+    <title>MyCitypedia </title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .quote-imgs-thumbs {
+            background: #eee;
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
+            margin: 1.5rem 0;
+            padding: 0.75rem;
+        }
+
+        .quote-imgs-thumbs--hidden {
+            display: none;
+        }
+
+        .img-preview-thumb {
+            background: #fff;
+            border: 1px solid #777;
+            border-radius: 0.25rem;
+            box-shadow: 0.125rem 0.125rem 0.0625rem rgba(0, 0, 0, 0.12);
+            margin-right: 1rem;
+            max-width: 140px;
+            padding: 0.25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+    <div class="preloader js-preloader">
+        <img src="images/preloader.gif" alt="...">
+    </div>
+  Preloader ends-->
+    <!--Page Wrapper starts-->
+    <div class="page-wrapper fixed-footer">
+        <!--header starts-->
+        <header class="header transparent scroll-hide">
+            <!--Main Menu starts-->
+            <div class="site-navbar-wrap v2">
+                <div class="container">
+                    <div class="site-navbar">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 col-6">
+                                <a class="navbar-brand" href="/index"><img src="../static/images/f.png" alt="logo"
+                                        class="img-fluid"></a>
+                            </div>
+                            <div class="col-md-8 col-6">
+                                <nav class="site-navigation float-left">
+                                    <div class="container">
+                                        <ul class="site-menu js-clone-nav d-none d-lg-block">
+                                          
+                                            <li class="has-children">
+                                                <a href="/addlisting">Add Listing</a>
+                                               
+                                            </li>
+                                            <li class="has-children">
+                                                <a href="/profile">Profile</a>
+                                            </li>
+
+                                            <li class="has-children">
+                                                <a href="/about">About us</a>
+                                               
+                                            </li>
+                                            <li class="has-children">
+                                                <a href="/contact">Contact us</a>
+                                            </li>
+
+                                           
+                                            <li class="has-children">
+                                                <a href="/userlistfull">My Listings</a>
+                                            </li>
+                                            <li class="has-children">
+                                                <a  class="btn v8" style="margin-right: 10px;" href="/logout">Logout</a>
+                                            </li>
+                                            <li class="has-children">
+                                                <a class="btn v8" href="/chatbot">Chat Bot</a>
+                                               
+                                            </li>
+
+                                          
+                                            
+                                           
+                                        </ul>
+                                    </div>
+                                </nav>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!--mobile-menu starts -->
+                    <div class="site-mobile-menu">
+                        <div class="site-mobile-menu-header">
+                            <div class="site-mobile-menu-close  js-menu-toggle">
+                                <span class="ion-ios-close-empty"></span>
+                            </div>
+                        </div>
+                        <div class="site-mobile-menu-body"></div>
+                    </div>
+                    <!--mobile-menu ends-->
+                </div>
+            </div>
+            <!--Main Menu ends-->
+        </header>
+        <!--Header ends-->
+        <!--Breadcrumb section starts-->
+        <div class="breadcrumb-section" style="background-image: url(../static/images/breadcrumb/breadcrumb-1.jpg)">
+            <div class="overlay op-5"></div>
+            <div class="container">
+                <div class="row align-items-center  pad-top-80">
+                    <div class="col-md-6 col-12">
+                        <div class="breadcrumb-menu">
+                            <h2 class="page-title">ADDING LISTINGS</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="breadcrumb-menu text-right sm-left">
+                            <ul>
+                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="#">ADDING LISTINGS</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Breadcrumb section ends-->
+        <!--Add Listing starts-->
+        <div class="list-details-section section-padding add_list pad-top-90">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+
+                        <h1>ADDING LISTINGS</h1>
+                        <ul class="nav nav-tabs list-details-tab">
+                            <li class="nav-item active">
+                                <a data-toggle="tab" href="#general_info">General Information</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a data-toggle="tab" href="#location">Location /Contacts<span
+                                        class="text-grey"></span></a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a data-toggle="tab" href="#social_network">Opening/Closing Time <span
+                                        class="text-grey"></span></a>
+                            </li>
+                        </ul>
+
+
+
+                        <form id="signUpForm" enctype="multipart/form-data">
+                            <!-- start step indicators -->
+                            <div class="form-header">
+                                <span class="stepIndicator">General Information</span>
+                                <span class="stepIndicator">Location /Contacts</span>
+                                <span class="stepIndicator">Opening/Closing Time</span>
+                            </div>
+                            <!-- end step indicators -->
+
+                            <!-- step one -->
+                            <div class="step">
+                                <p>Create your Listing</p>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Business  Name</label>
+                                            <input type="text" class="form-control filter-input"
+                                                placeholder="Business Title" name="Title">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="categorySelect">Category</label>
+                                            <select class="form-control filter-input" id="categorySelect" name="categorySelect">
+                                                <option value="Hotels">Hotels</option>
+                                                <option value="Restaurants">Restaurants</option>
+                                                <option value="Shopping">Shopping</option>
+                                                <option value="Beauty">Beauty & spa</option>
+                                                <option value="Hospitals">Hospitals</option>
+                                                <option value="Education">Education</option>
+                                                <option value="Event">Event Organizers</option>
+                                                <option value="Dentists">Dentists</option>
+                                                <option value="Estate_Agent">Estate Agent</option>
+                                                <option value="GYM">GYM</option>
+                                                <option value="Courier_Services">Courier Services</option>
+                                                <option value="Motor_Training_Schools">Motor Training Schools</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Contact Number</label>
+                                            <input type="number" pattern="[0-9]{10}" class="form-control filter-input"
+                                                placeholder="Enter your contact No" name="Contact">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label> Email Address</label>
+                                            <input type="email" class="form-control filter-input"
+                                                placeholder="Email Address " name="Email" >
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-md-12">
+
+                                    <div class="form-group">
+                                        <label for="list_info">Description</label>
+                                        <textarea class="form-control" id="list_info" rows="4"
+                                            placeholder="Enter your text here" name="Description"></textarea>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12">
+                                    <p>
+                                        <label for="upload_imgs">Select Your Images +</label>
+                                        <input class="show-for-sr" type="file" id="upload_imgs" name="upload_imgs[]"
+                                            multiple />
+                                    </p>
+                                    <div class="quote-imgs-thumbs quote-imgs-thumbs--hidden" id="img_preview"
+                                        aria-live="polite"></div>
+
+
+                                </div>
+                            </div>
+
+                            <!-- step two -->
+                            <div class="step">
+                                <p>Your presence on the social network</p>
+
+
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="categorySelect">State & City</label>
+                                            <select class="form-control filter-input" id="City" name="City">
+                                                <option value="panvel">panvel</option>
+                                                <option value="vashi">vashi</option>
+                                                <option value="Aroli">Aroli</option>
+                                                <option value="Thane">Thane</option>
+                                               
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Current Address</label>
+                                            <input type="text" class="form-control filter-input" name="Current_Address" 
+                                                placeholder="ex. 250, Fifth Avenue...">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Contact Name Person</label>
+                                            <input type="text" class="form-control filter-input" name="State" 
+                                                placeholder="ex. New York">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Zip Code</label>
+                                            <input type="text" class="form-control filter-input" name="Zip" 
+                                                placeholder="ex. 5858">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Facebook link (Optional)</label>
+                                            <input type="text" class="form-control filter-input"
+                                                placeholder="Facebook url" name="Facebook" >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Pinterest (Optional)</label>
+                                            <input type="text" class="form-control filter-input"
+                                                placeholder="Pinterest url" name="Pinterest" >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Twitter link (Optional)</label>
+                                            <input type="text" class="form-control filter-input"
+                                                placeholder="Twitter url" name="Twitter" >
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <!-- step three -->
+                            <div class="step">
+                                <p>We will never sell it</p>
+                               
+                                <div class="row">
+
+                                    <div class="col-md-2">
+                                        <label class="fix_spacing">WEEK ROUTING</label>
+                                    </div>
+
+                                    
+                                    
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label for="openingTimeSelect">Opening Time</label>
+                                            <select class="form-control" id="openingTimeSelect" name="openingTimeSelect">
+                                                <option value="6.00 am">6.00 am</option>
+                                                <option value="7.00 am">7.00 am</option>
+                                                <option value="8.00 am">8.00 am</option>
+                                                <option value="9.00 am">9.00 am</option>
+                                                <option value="10.00 am">10.00 am</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label for="openingTimeSelect">closing Time</label>
+                                            <select class="form-control" id="closing" name="closing">
+                                                <option value="5.00 pm">5.00 pm</option>
+                                                <option value="6.00 pm">6.00 pm</option>
+                                                <option value="7.00 pm">7.00 pm</option>
+                                                <option value="8.00 pm">8.00 pm</option>
+                                                <option value="9.00 pm">9.00 pm</option>
+                                                <option value="10.00 pm">10.00 pm</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+
+                                </div>
+                            </div>
+
+                            <!-- start previous / next buttons -->
+                            <div class="form-footer">
+                                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                            </div>
+                            <!-- end previous / next buttons -->
+                        </form>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Add Listing ends-->
+        <!-- Scroll to top starts-->
+        <span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
+        <!-- Scroll to top ends-->
+    </div>
+    <!--Page Wrapper ends-->
+    <!--Footer Starts-->
+    <div class="footer-wrapper no-pad-tb footer-fixed v1"
+        style="background-image: url(../static/images/bg/footer-bg-1.png)">
+        <div class="overlay op-1"></div>
+        <div class="footer-top-area section-padding">
+            <div class="container">
+                <div class="row nav-folderized">
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-logo">
+                            <a href="index.html"> <img src="../static/images/f.png" alt="logo"></a>
+                            <div class="company-desc">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio excepturi nam
+                                    totam sequi, ipsam consequatur repudiandae libero illum.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-content nav">
+                            <h2 class="title">Helpful Links</h2>
+                            <ul class="list">
+                                <li><a class="link-hov style2" href="#">Login</a></li>
+                                <li><a class="link-hov style2" href="#">My Account</a></li>
+                                <li><a class="link-hov style2" href="#">Add Listing</a></li>
+                                <li><a class="link-hov style2" href="#">Privacy policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-content nav">
+                            <h2 class="title">Category</h2>
+                            <ul class="list">
+                                <li><a class="link-hov style2" href="#">Shop</a></li>
+                                <li><a class="link-hov style2" href="#">Travel</a></li>
+                                <li><a class="link-hov style2" href="#">Sport</a></li>
+                                <li><a class="link-hov style2" href="#">Restaurant</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-content nav">
+                            <h2 class="title">Contact us</h2>
+                            <ul class="list footer-list">
+                                <li>
+                                    <div class="contact-info">
+                                        <div class="icon">
+                                            <i class="ion-ios-location"></i>
+                                        </div>
+                                        <div class="text">13th North Ave, Florida, USA</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-info">
+                                        <div class="icon">
+                                            <i class="ion-email"></i>
+                                        </div>
+                                        <div class="text"><a href="#">info@MyCitypedia.com</a></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-info">
+                                        <div class="icon">
+                                            <i class="ion-ios-telephone"></i>
+                                        </div>
+                                        <div class="text">+44 078 767 595</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="social-buttons style2">
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+                                <li><a href="#"><i class="ion-social-youtube"></i></a></li>
+                                <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2 text-center">
+                        <p>&copy; 2019 MyCitypedia. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer ends-->
+
+    <!--Scripts starts-->
+
+
+    <script>
+        var currentTab = 0; // Current tab is set to be the first tab (0)
+        showTab(currentTab); // Display the current tab
+
+        function showTab(n) {
+            // This function will display the specified tab of the form...
+            var x = document.getElementsByClassName("step");
+            x[n].style.display = "block";
+            //... and fix the Previous/Next buttons:
+            if (n == 0) {
+                document.getElementById("prevBtn").style.display = "none";
+            } else {
+                document.getElementById("prevBtn").style.display = "inline";
+            }
+            if (n == (x.length - 1)) {
+                document.getElementById("nextBtn").innerHTML = "Submit";
+            } else {
+                document.getElementById("nextBtn").innerHTML = "Next";
+            }
+            //... and run a function that will display the correct step indicator:
+            fixStepIndicator(n)
+        }
+
+        function nextPrev(n) {
+            // This function will figure out which tab to display
+            var x = document.getElementsByClassName("step");
+            // Exit the function if any field in the current tab is invalid:
+            if (n == 1 && !validateForm()) return false;
+            // Hide the current tab:
+            x[currentTab].style.display = "none";
+            // Increase or decrease the current tab by 1:
+            currentTab = currentTab + n;
+            // if you have reached the end of the form...
+            if (currentTab >= x.length) {
+                // ... the form gets submitted:
+               var form = $('#signUpForm')[0];
+                var data = new FormData(form);
+                console.log(data)
+                $.ajax({
+                    type: 'POST',
+                    enctype: 'multipart/form-data',
+                    url: "addlistingdata",
+                    data: data,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    timeout: 600000,
+                    success: function (response) {
+
+                        Swal.fire({
+                            title: 'Your Listing has been saved!',
+                            text: response.message,
+                            icon: 'success',
+                            confirmButtonText: 'Okay'
+                        }).then((result) => {
+                            // Check if the "Okay" button was clicked
+                            if (result.isConfirmed) {
+                                // Redirect to a new URL
+                                window.location.href = '/addlisting'; // Replace with the desired URL
+                            }
+                        });
+
+                    },
+                    error: function (e) {
+                        console.log("ERROR : ", e);
+                        $("#btnSubmit").prop("disabled", false);
+                    }
+                });
+                return false;
+            }
+            // Otherwise, display the correct tab:
+            showTab(currentTab);
+        }
+
+        function validateForm() {
+            // This function deals with validation of the form fields
+            var x, y, i, valid = true;
+            x = document.getElementsByClassName("step");
+            y = x[currentTab].getElementsByTagName("input");
+            // A loop that checks every input field in the current tab:
+            for (i = 0; i < y.length; i++) {
+                // If a field is empty...
+                if (y[i].value == "") {
+                    // add an "invalid" class to the field:
+                    y[i].className += " invalid";
+                    // and set the current valid status to false
+                    valid = false;
+                }
+            }
+            // If the valid status is true, mark the step as finished and valid:
+            if (valid) {
+                document.getElementsByClassName("stepIndicator")[currentTab].className += " finish";
+            }
+            return valid; // return the valid status
+        }
+
+        function fixStepIndicator(n) {
+            // This function removes the "active" class of all steps...
+            var i, x = document.getElementsByClassName("stepIndicator");
+            for (i = 0; i < x.length; i++) {
+                x[i].className = x[i].className.replace(" active", "");
+            }
+            //... and adds the "active" class on the current step:
+            x[n].className += " active";
+        }
+    </script>
+    <!--plugin js-->
+    <script src="../static/js/plugin.js"></script>
+    <!--google maps-->
+
+    <script src="../static/js/main.js"></script>
+    <!--Scripts ends-->
+
+    <script>
+        var imgUpload = document.getElementById('upload_imgs')
+            , imgPreview = document.getElementById('img_preview')
+            , imgUploadForm = document.getElementById('img-upload-form')
+            , totalFiles
+            , previewTitle
+            , previewTitleText
+            , img;
+
+        imgUpload.addEventListener('change', previewImgs, false);
+
+        function previewImgs(event) {
+            totalFiles = imgUpload.files.length;
+
+            if (!!totalFiles) {
+                imgPreview.classList.remove('quote-imgs-thumbs--hidden');
+                previewTitle = document.createElement('p');
+                previewTitle.style.fontWeight = 'bold';
+                previewTitleText = document.createTextNode(totalFiles + ' Total Images Selected');
+                previewTitle.appendChild(previewTitleText);
+                imgPreview.appendChild(previewTitle);
+            }
+
+            for (var i = 0; i < totalFiles; i++) {
+                img = document.createElement('img');
+                img.src = URL.createObjectURL(event.target.files[i]);
+                img.classList.add('img-preview-thumb');
+                imgPreview.appendChild(img);
+            }
+        }
+    </script>
+</body>
+
+
+<!-- Mirrored from lion-coders.com/demo/html/MyCitypedia/add-listing.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Jul 2023 14:57:47 GMT -->
+
+</html>

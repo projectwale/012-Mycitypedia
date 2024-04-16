@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+
+<!-- Mirrored from lion-coders.com/demo/html/listagram/home-v6.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Jul 2023 14:57:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- Metas -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="LionCoders" />
+    <!-- Links -->
+    <link rel="icon" type="../static/image/png" href="#" />
+    <!-- google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+    <!-- Plugins CSS -->
+    <link href="../static/css/plugin.css" rel="stylesheet" />
+    <!-- style CSS -->
+    <link href="../static/css/style.css" rel="stylesheet" />
+    <!--color switcher css-->
+    <link rel="stylesheet" href="../static/css/switcher/skin-aqua.css" media="screen" id="style-colors" />
+    <!-- Document Title -->
+    <title>MYCITYPEDIA</title>
+    <style>
+        .card-img-top {
+            width: 336px;
+            height: 224px;
+            object-fit: cover; /* To maintain aspect ratio and fill the container */
+        }
+    </style>
+    
+</head>
+
+<body>
+    <!--Preloader starts-->
+     <!-- <div class="preloader js-preloader">
+        <img src="../static/images/preloader.gif" alt="...">
+    </div> -->
+    <!--Preloader ends-->
+    <!--Page Wrapper starts-->
+    <div class="page-wrapper fixed-footer">
+        <!--header starts-->
+        <header class="header transparent scroll-hide">
+            <!--Main Menu starts-->
+            <div class="site-navbar-wrap v2">
+                <div class="container">
+                    <div class="site-navbar">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 col-6">
+                                <a class="navbar-brand" href="/index"><img src="../static/images/f.png" alt="logo" class="img-fluid"></a>
+                            </div>
+                            <div class="col-md-8 col-6">
+                                <nav class="site-navigation float-left">
+                                    <div class="container">
+                                        <ul class="site-menu js-clone-nav d-none d-lg-block">
+                                          
+                                            <li class="has-children">
+                                                <a href="/addlisting">Add Listing</a>
+                                               
+                                            </li>
+                                            <li class="has-children">
+                                                <a href="/profile">Profile</a>
+                                            </li>
+
+                                            <li class="has-children">
+                                                <a href="/about">About us</a>
+                                               
+                                            </li>
+                                            <li class="has-children">
+                                                <a href="/contact">Contact us</a>
+                                            </li>
+
+                                           
+                                            <li class="has-children">
+                                                <a href="/userlistfull">My Listings</a>
+                                            </li>
+                                            <li class="has-children">
+                                                <a  class="btn v8" style="margin-right: 10px;" href="/logout">Logout</a>
+                                            </li>
+                                            <li class="has-children">
+                                                <a class="btn v8" href="/chatbot">Chat Bot</a>
+                                               
+                                            </li>
+
+                                            
+
+                                          
+                                            
+                                           
+                                        </ul>
+                                    </div>
+                                </nav>
+                                
+                               
+                              
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!--mobile-menu starts -->
+                    <div class="site-mobile-menu">
+                        <div class="site-mobile-menu-header">
+                            <div class="site-mobile-menu-close  js-menu-toggle">
+                                <span class="ion-ios-close-empty"></span>
+                            </div>
+                        </div>
+                        <div class="site-mobile-menu-body"></div>
+                    </div>
+                    <!--mobile-menu ends-->
+                </div>
+            </div>
+            <!--Main Menu ends-->
+        </header>
+        <!--Header ends-->
+        <!--Listing Details Hero starts-->
+        <div class="video-area listing-details-wrapper">
+            <div class="video-container">
+                <div class="overlay op-5"></div>
+                <div id="video-wrapper" style="background-image: url(../static/images/bg/video-bg.jpg)"> </div>
+                <a class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=dqD0SqMNtks'}"></a>
+              
+            </div>
+        </div>
+        <!--Listing Details Hero ends-->
+        <!--Category section starts-->
+        <div class="popular-catagory  mar-top-30 pad-bot-50 section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <a href="/Listings1/Hotels">
+                            <div class="popular-catagory-content v2">
+                                <div class="popular-catagory-img">
+                                    <img src="../static/images/category/cat-1.jpg" alt="..." class="img_fluid">
+                                    <div class="overlay op-5"></div>
+                                </div>
+                                <div class="cat-content">
+                                    <i class="icofont-hotel"></i>
+                                    <h4 class="title">Hotel</h4>
+                                    <span>Hotel Listings</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <a href="/Listings1/Restaurants">
+                            <div class="popular-catagory-content v2">
+                                <div class="popular-catagory-img">
+                                    <img src="../static/images/category/cat_1.jpg" alt="..." class="img_fluid">
+                                    <div class="overlay op-5"></div>
+                                </div>
+                                <div class="cat-content">
+                                    <i class="icofont-restaurant"></i>
+                                    <h4 class="title">Restaurent</h4>
+                                    <span>Restaurent Listings</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <a href="/Listings1/Shopping">
+                            <div class="popular-catagory-content v2">
+                                <div class="popular-catagory-img">
+                                    <img src="../static/images/category/cat_2.jpg" alt="..." class="img_fluid">
+                                    <div class="overlay op-5"></div>
+                                </div>
+                                <div class="cat-content">
+                                    <i class="icofont-shopping-cart"></i>
+                                    <h4 class="title">Shopping</h4>
+                                    <span>Shopping Listings</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <a href="/Listings1/Beauty">
+                            <div class="popular-catagory-content v2">
+                                <div class="popular-catagory-img">
+                                    <img src="../static/images/category/sps.jpg" alt="..." class="img_fluid">
+                                    <div class="overlay op-5"></div>
+                                </div>
+                                <div class="cat-content">
+                                    <i class="icofont-cut"></i>
+                                    <h4 class="title">Beauty & spa</h4>
+                                    <span>Beauty & spa Listings</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <a href="/Listings1/Hospitals">
+                            <div class="popular-catagory-content v2">
+                                <div class="popular-catagory-img">
+                                    <img src="../static/images/category/hh.jpg" alt="..." class="img_fluid">
+                                    <div class="overlay op-5"></div>
+                                </div>
+                                <div class="cat-content">
+                                    <i class="icofont-hospital"></i>
+                                    <h4 class="title">Hospital</h4>
+                                    <span>Hospital Listings</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <a href="/Listings1/Education">
+                            <div class="popular-catagory-content v2">
+                                <div class="popular-catagory-img">
+                                    <img src="../static/images/category/ee.jpg" alt="..." class="img_fluid">
+                                    <div class="overlay op-5"></div>
+                                </div>
+                                <div class="cat-content">
+                                    <i class="icofont-education"></i>
+                                    <h4 class="title">Education</h4>
+                                    <span>Education Listings</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <a href="/Listings1/Event">
+                            <div class="popular-catagory-content v2">
+                                <div class="popular-catagory-img">
+                                    <img src="../static/images/category/a.jpg" alt="..." class="img_fluid">
+                                    <div class="overlay op-5"></div>
+                                </div>
+                                <div class="cat-content">
+                                    <i class="icofont-calendar"></i>
+                                    <h4 class="title">Event Organizers</h4>
+                                    <span>Event Organizers Listings</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <a href="/Listings1/Dentists">
+                            <div class="popular-catagory-content v2">
+                                <div class="popular-catagory-img">
+                                    <img src="../static/images/category/qq.jpg" alt="..." class="img_fluid">
+                                    <div class="overlay op-5"></div>
+                                </div>
+                                <div class="cat-content">
+                                    <i class="icofont-doctor"></i>
+                                    <h4 class="title">Dentists</h4>
+                                    <span>Dentists Listings</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <a href="/Listings1/Estate_Agent">
+                            <div class="popular-catagory-content v2">
+                                <div class="popular-catagory-img">
+                                    <img src="../static/images/category/ss.jpg" alt="..." class="img_fluid">
+                                    <div class="overlay op-5"></div>
+                                </div>
+                                <div class="cat-content">
+                                    <i class="icofont-search-property"></i>
+                                    <h4 class="title">Estate Agent</h4>
+                                    <span>Estate Agent Listings</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <a href="/Listings1/GYM">
+                            <div class="popular-catagory-content v2">
+                                <div class="popular-catagory-img">
+                                    <img src="../static/images/category/gg.jpg" alt="..." class="img_fluid">
+                                    <div class="overlay op-5"></div>
+                                </div>
+                                <div class="cat-content">
+                                    <i class="icofont-gym-alt-2"></i>
+                                    <h4 class="title">GYM</h4>
+                                    <span>GYM Listings</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <a href="/Listings1/Courier_Services">
+                            <div class="popular-catagory-content v2">
+                                <div class="popular-catagory-img">
+                                    <img src="../static/images/category/cc.jpg" alt="..." class="img_fluid">
+                                    <div class="overlay op-5"></div>
+                                </div>
+                                <div class="cat-content">
+                                    <i class="icofont-delivery-time"></i>
+                                    <h4 class="title">Courier Services</h4>
+                                    <span>Courier Services Listings</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <a href="/Listings1/Motor_Training_Schools">
+                            <div class="popular-catagory-content v2">
+                                <div class="popular-catagory-img">
+                                    <img src="../static/images/category/tt.jpg" alt="..." class="img_fluid">
+                                    <div class="overlay op-5"></div>
+                                </div>
+                                <div class="cat-content">
+                                    <i class="icofont-motor-biker"></i>
+                                    <h4 class="title">Motor Training Schools</h4>
+                                    <span>Motor Training Schools Listings</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Category section ends-->
+       <!--Coupon starts-->
+       <div class="coupon-section section-padding">
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 text-center">
+                    <h2 class="section-title v1"> Recommended  &amp; Business </h2>
+                </div>
+                <div class="col-md-12">
+                    
+                    <div class="swiper-container coupon-wrap">
+                        <div class="swiper-wrapper pad-bot-15">
+                            {% for i in newrow %}
+                            <div class="swiper-slide coupon-content">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="coupon-img">
+                                            <img class="img-fluid card-img-top" src="../{{i[18]}}" alt="...">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="coupon-desc float-right">
+                                            <h4>{{i[2]}}</h4>
+                                            <p>{{i[1]}}</p>
+                                            <br>
+                                            <h4>CITY</h4>
+                                            <p>{{i[6]}}</p>
+                                            <br>
+                                            <h4>PINCODE</h4>
+                                            <p>{{i[9]}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <div class="coupon-owner mar-top-20">
+                                            {{i[3]}} 
+                                        </div>
+                                    </div>
+                                    <div class="float-left">
+                                        <a class="btn v1" data-toggle="modal" data-target="#coupon_wrap" 
+                                           data-title="{{i[2]}}" data-description="{{i[5]}}" data-owner="{{i[7]}}"
+                                           onclick="updateModal(this)">
+                                            show
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="slider-btn v1 coupon-next"><i class="ion-arrow-right-c"></i></div>
+                    <div class="slider-btn v1 coupon-prev"><i class="ion-arrow-left-c"></i></div>
+
+
+                    <div class="modal fade" id="coupon_wrap" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Business Details</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h4 id="modal-title"></h4>
+                                    <p id="modal-description"></p>
+                                    <div id="modal-owner"></div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function updateModal(btn) {
+            var title = btn.getAttribute('data-title');
+            var description = btn.getAttribute('data-description');
+            var owner = btn.getAttribute('data-owner');
+            
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-description').textContent = description;
+            document.getElementById('modal-owner').textContent = owner;
+        }
+    </script>
+    
+    <!--Coupon ends-->
+   
+       
+        <!-- Scroll to top starts-->
+        <span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
+        <!-- Scroll to top ends-->
+    </div>
+
+    
+    <!--Page Wrapper ends-->
+    <!--Footer Starts-->
+    <div class="footer-wrapper no-pad-tb footer-fixed v1" style="background-image: url(../static/images/bg/footer-bg-1.png)">
+        <div class="overlay op-1"></div>
+        <div class="footer-top-area section-padding">
+            <div class="container">
+                <div class="row nav-folderized">
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-logo">
+                            <a href="/index"> <img src="../static/images/f.png" alt="logo"></a>
+                            <div class="company-desc">
+                                <p>
+                                    A smart city aims to leverage technology, data, and innovation to enhance the quality of life for its residents, while also promoting sustainability, efficiency, and economic growth.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-content nav">
+                            <h2 class="title">Helpful Links</h2>
+                            <ul class="list">
+                                <li><a class="link-hov style2" href="/Listings1/Hotels">Hotel</a></li>
+                                <li><a class="link-hov style2" href="/Listings1/Restaurants">Restaurent</a></li>
+                                <li><a class="link-hov style2" href="/Listings1/Shopping">Shopping</a></li>
+                                <li><a class="link-hov style2" href="/Listings1/Beauty">Beauty & spa</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-content nav">
+                            <h2 class="title">Category</h2>
+                            <ul class="list">
+                                <li><a class="link-hov style2" href="/Listings1/Hospitals">Hospital</a></li>
+                                <li><a class="link-hov style2" href="/Listings1/Education">Education</a></li>
+                                <li><a class="link-hov style2" href="/Listings1/GYM">GYM</a></li>
+                                <li><a class="link-hov style2" href="/Listings1/Dentists">Dentists</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-content nav">
+                            <h2 class="title">Contact us</h2>
+                            <ul class="list footer-list">
+                                <li>
+                                    <div class="contact-info">
+                                        <div class="icon">
+                                            <i class="ion-ios-location"></i>
+                                        </div>
+                                        <div class="text">Panvel City</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-info">
+                                        <div class="icon">
+                                            <i class="ion-email"></i>
+                                        </div>
+                                        <div class="text"><a href="#">info@MyCitypedia.com</a></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-info">
+                                        <div class="icon">
+                                            <i class="ion-ios-telephone"></i>
+                                        </div>
+                                        <div class="text">+91 9635023525</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="social-buttons style2">
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+                                <li><a href="#"><i class="ion-social-youtube"></i></a></li>
+                                <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2 text-center">
+                        <p>&copy; 2023 MyCitypedia. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer ends-->
+   
+    <!--Scripts starts-->
+    <!--plugin js-->
+    <script src="../static/js/plugin.js"></script>
+    <!--google maps-->
+   
+    <!--Main js-->
+    <script src="../static/js/main.js"></script>
+    <!--Scripts ends-->
+</body>
+
+
+<!-- Mirrored from lion-coders.com/demo/html/listagram/home-v6.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Jul 2023 14:57:21 GMT -->
+</html>

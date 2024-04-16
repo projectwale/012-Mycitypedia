@@ -1,0 +1,108 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://www.mapsofindia.com/maps/maharashtra/navi-mumbai-map.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_mycitypedia:
+  - text: "Welcome to MyCityPedia! Your one-stop solution for all your inquiries related to New Panvel. 
+   Whether you need information about hospitals, clinics, shopping, dining, education, or emergency services,
+   I've got you covered. Just ask, and I'll help you find the best places and services in your area!"
+
+  utter_hospitals:
+  - text: |
+      Sure, I can help you find hospitals in New Panvel. 
+      Please click on the relevant link for more information. 
+      Hope this information helps [http://localhost:5000/Listings/Hospitals]
+
+  utter_my_name_is:
+  - text: "Nice to meet you {person}" 
+
+ 
+  utter_clinics:
+    - text: "Certainly! When it comes to clinics or doctors , I can assist you in finding the right one.
+             Please click on the provided link for further information .
+             Hope this information was useful.[http://localhost:5000/Listings/Dentists]"
+
+         
+
+  utter_shopping:
+   - text: "Certainly! I can help you find nearby shops. Please click on the link provided for further relevant.[http://localhost:5000/Listings/Shopping] Thank you for using our shopping assistance service! If you have any more questions or need further assistance, feel free to ask. Happy shopping!"              
+      
+  utter_hotels:
+    - text: "Sure, I can help you find hotels in your area. To provide you with the best suggestions, could you please specify your preferences? For example, are you looking for high-rated hotels, low-budget options, or hotels with specific amenities?  checkout this link for relevant information 
+      If you have any more questions or need further assistance, feel free to ask. Have a pleasant stay![http://localhost:5000/Listings/Hotels]"
+    
+
+  utter_financial_institution:
+    - text: "Certainly! I can help you find nearby financial institutions. To provide you with the best suggestions, could you please specify your requirements? Are you looking for banks offering specific services like loans, fixed deposits, or insurance policies? Or you can directly checkout this link 
+     If you have any more questions or need further assistance, feel free to ask. Have a great day! [http://localhost:5000/Listings/Education]"
+     
+
+  utter_fitness:
+    - text: "Sure, I can help you find fitness centers and gyms in your area. Are you looking for gyms, yoga centers, or specific types of fitness training such as boxing, kickboxing, or karate? you can checkout this link for further relevant information 
+     If you have any more questions or need further assistance, feel free to ask. Stay healthy and keep up the good work! [http://localhost:5000/Listings/Shopping]"
+      
+  utter_local_markets:
+    - text: "Certainly! I can help you find local markets in your area.Are you looking for grocery stores, fresh produce markets, clothing shops, or something else? checkout given link for more information 
+    If you have any more questions or need further assistance, feel free to ask. Happy shopping and have a great day! [http://localhost:5000/Listings/Education]"
+
+  utter_places_to_visit:
+    - text: "Certainly! I can help you find interesting places to visit in your area. feel free to checkout given link for further information 
+     If you have any more questions or need further assistance, feel free to ask. Enjoy your visit and have a wonderful time exploring! [http://localhost:5000/Listings/Event]"
+    
+
+  utter_office_suggestions:
+    - text: "Certainly! I can help you find offices and professionals in your area. Are you looking for lawyers, real estate agents, accountants, or something else related to your official work? please check given link and proceed as per your requirement 
+    Good luck with your official tasks and have a productive day! [http://localhost:5000/Listings/Estate_Agent]"
+
+
+  utter_hungry_suggestions:
+    - text: "I understand you're hungry! There are many great places to eat nearby.checkout given link for fullfilling your cravings 
+     Enjoy your meal and have a delightful experience! [http://localhost:5000/Listings/Restaurants]"  
+    
+  
+  utter_cafe_suggestions:
+    - text: "I understand you're hungry! There are many great places to eat nearby.checkout given link for fullfilling your cravings 
+     Enjoy your meal and have a delightful experience! [http://localhost:5000/Listings/Restaurants]"  
+   
+  utter_restaurants_suggestions:
+    - text: "I understand you're hungry! There are many great places to eat nearby.checkout given link for fullfilling your cravings 
+     Enjoy your meal and have a delightful experience! [http://localhost:5000/Listings/Restaurants]" 
+     
+
+  utter_food_suggestions:
+    - text: "I understand you're hungry! There are many great places to eat nearby.checkout given link for fullfilling your cravings
+     Enjoy your meal and have a delightful experience! [http://localhost:5000/Listings/Restaurants]" 
+      
+  utter_transportation:
+    - text: "Certainly! There are various transportation services available in the area. to get further information click on the given link.[http://localhost:5000/Listings/Courier_Services]"
+   
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

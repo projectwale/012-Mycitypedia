@@ -1,0 +1,18 @@
+[
+  {
+    "text": "good afternoon",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5729196667671204
+    }
+  },
+  {
+    "text": "police",
+    "intent": "emergency_services",
+    "intent_prediction": {
+      "name": "government_services",
+      "confidence": 0.6907109022140503
+    }
+  }
+]

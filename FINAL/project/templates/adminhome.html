@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from lion-coders.com/demo/html/listagram/db-add-listing.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Jul 2023 14:57:52 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+    <!-- Metas -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="LionCoders" />
+    <!-- Links -->
+    <link rel="icon" type="image/png" href="#" />
+    <!-- google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+    <!-- Plugins CSS -->
+    <link href="../static/css/plugin.css" rel="stylesheet" />
+    <!-- Perfect scrollbar CSS-->
+    <link href="../static/css/perfect-scrollbar.css" rel="stylesheet">
+    <!-- style CSS -->
+    <link href="../static/css/style.css" rel="stylesheet" />
+    <!-- Dashboard CSS -->
+    <link href="../static/css/dashboard.css" rel="stylesheet" />
+    <!--color switcher css-->
+    <link rel="stylesheet" href="../static/css/switcher/skin-aqua.css" media="screen" id="style-colors" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../static/js/jquery-3.3.1.js"></script>
+    <!-- Document Title -->
+    <title>MYCITYPEDIA</title>
+    <style>
+        .quote-imgs-thumbs {
+            background: #eee;
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
+            margin: 1.5rem 0;
+            padding: 0.75rem;
+        }
+
+        .quote-imgs-thumbs--hidden {
+            display: none;
+        }
+
+        .img-preview-thumb {
+            background: #fff;
+            border: 1px solid #777;
+            border-radius: 0.25rem;
+            box-shadow: 0.125rem 0.125rem 0.0625rem rgba(0, 0, 0, 0.12);
+            margin-right: 1rem;
+            max-width: 140px;
+            padding: 0.25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-wrapper">
+
+        <!--Sidebar Menu Starts-->
+        <aside class="menu-sidebar js-right-sidebar d-block d-lg-none">
+            <div class="logo">
+                <a href="/alladdlist">
+                    <img src="../static/images/f.png" alt="Listagram" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar2">
+                <div class="account-img">
+                    <img src="../static/images/clients/reviewer-4.png" alt="Steve Austin" />
+                </div>
+                <h4 class="name">ADMIN</h4>
+                <nav class="navbar-sidebar2">
+                    <ul class="list-unstyled navbar__list">
+                        <li>
+                            <a  href="/alladdlist">
+                                <i class="ion-ios-gear-outline"></i>Dashboard
+                            </a>
+                        </li>
+
+
+                        
+                        <li>
+                            <a  class="active" href="/adminhome">
+                                <i class="ion-ios-plus-outline"></i>Add Listings</a>
+                        </li>
+
+
+                        <li>
+                            <a href="/logout1">
+                                <i class="ion-ios-upload-outline"></i>Logout</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!--Sidebar Menu ends-->
+
+        
+
+        <!--Dashboard content Wrapper starts-->
+        <div class="dash-content-wrap">
+
+            <!-- Top header starts-->
+            <header class="db-top-header">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-md-9 col-sm-6 col-4">
+                            <div class="site-navbar-wrap v2">
+                                <div class="site-navbar">
+                                    <div class="row align-items-center">
+                                        <nav class="site-navigation float-left">
+                                            <div class="container">
+
+                                            </div>
+                                        </nav>
+                                        <div class="d-lg-none sm-right">
+                                            <a href="#" class="mobile-bar js-menu-toggle">
+                                                <span class="ion-android-menu"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="site-mobile-menu">
+                                    <div class="site-mobile-menu-header">
+                                        <div class="site-mobile-menu-close  js-menu-toggle">
+                                            <span class="ion-ios-close-empty"></span>
+                                        </div>
+                                    </div>
+                                    <div class="site-mobile-menu-body"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-8">
+                            <div class="header-button">
+                                <div class="header-button-item has-noti js-item-menu">
+                              
+
+                                </div>
+                                <div class="header-button-item js-sidebar-btn">
+                                    <img src="../static/images/clients/reviewer-4.png" alt="...">
+                                    <span>admin </span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- Top header ends-->
+
+            <!--Dashboard breadcrumb starts-->
+            
+            <!--Dashboard breadcrumb ends-->
+            <!--Dashboard content starts-->
+            <div class="dash-content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <form id="signUpForm" enctype="multipart/form-data">
+                            <div class="col-md-12">
+                                <div class="db-add-list-wrap">
+                                    <div class="act-title">
+                                        <h5><i class="ion-ios-information"></i> General Information :</h5>
+                                    </div>
+                                    <div class="db-add-listing">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Business  Name</label>
+                                                    <input type="text" class="form-control filter-input"
+                                                        placeholder="Business Title" name="Title">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="categorySelect">Category</label>
+                                                    <select class="form-control filter-input" id="categorySelect"
+                                                        name="categorySelect">
+                                                        <option value="Hotels">Hotels</option>
+                                                        <option value="Restaurants">Restaurants</option>
+                                                        <option value="Shopping">Shopping</option>
+                                                        <option value="Beauty">Beauty & spa</option>
+                                                        <option value="Hospitals">Hospitals</option>
+                                                        <option value="Education">Education</option>
+                                                        <option value="Event">Event Organizers</option>
+                                                        <option value="Dentists">Dentists</option>
+                                                        <option value="Estate_Agent">Estate Agent</option>
+                                                        <option value="GYM">GYM</option>
+                                                        <option value="Courier_Services">Courier Services</option>
+                                                        <option value="Motor_Training_Schools">Motor Training Schools</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Contact</label>
+                                                    <input type="number" pattern="[0-9]{10}"
+                                                        class="form-control filter-input"
+                                                        placeholder="Enter your contact No" name="Contact">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label> Email Address</label>
+                                                    <input type="email" class="form-control filter-input"
+                                                        placeholder="Email Address " name="Email">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-12">
+
+                                                <div class="form-group">
+                                                    <label for="list_info">Description</label>
+                                                    <textarea class="form-control" id="list_info" rows="4"
+                                                        placeholder="Enter your text here"
+                                                        name="Description"></textarea>
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="db-add-list-wrap">
+                                    <div class="act-title">
+                                        <h5><i class="ion-image"></i> Gallery :</h5>
+                                    </div>
+                                    <div class="db-add-listing">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <p>
+                                                    <label for="upload_imgs">Select Your Images +</label>
+                                                    <input class="show-for-sr" type="file" id="upload_imgs"
+                                                        name="upload_imgs[]" multiple />
+                                                </p>
+                                                <div class="quote-imgs-thumbs quote-imgs-thumbs--hidden"
+                                                    id="img_preview" aria-live="polite"></div>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="add-btn">
+                                            <a href="#" class="btn v8 mar-top-20">Add Images</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="db-add-list-wrap">
+                                    <div class="act-title">
+                                        <h5><i class="ion-ios-location"></i> Location/Contacts :</h5>
+                                    </div>
+                                    <div class="db-add-listing">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="categorySelect">Select Area</label>
+                                                    <select class="form-control filter-input" id="City" name="City">
+                                                        <option value="panvel">panvel</option>
+                                                        <option value="vashi">vashi</option>
+                                                        <option value="Aroli">Aroli</option>
+                                                        <option value="Thane">Thane</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Current Address</label>
+                                                    <input type="text" class="form-control filter-input"
+                                                        name="Current_Address" placeholder="ex. 250, Fifth Avenue...">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Contact Name Person</label>
+                                                    <input type="text" class="form-control filter-input" name="State"
+                                                        placeholder="ex. abc">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Zip Code</label>
+                                                    <input type="text" class="form-control filter-input" name="Zip"
+                                                        placeholder="ex. 5858">
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                               
+                                <div class="db-add-list-wrap">
+                                    <div class="act-title">
+                                        <h5><i class="ion-clock"></i> Opening/Business Hours :</h5>
+                                    </div>
+                                    <div class="db-add-listing">
+                                        <div class="row mar-bot-30">
+
+                                            <div class="col-md-2">
+                                                <label class="fix_spacing">WEEK ROUTING</label>
+                                            </div>
+
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label for="openingTimeSelect">Opening Time</label>
+                                                    <select class="form-control" id="openingTimeSelect"
+                                                        name="openingTimeSelect">
+                                                        <option value="6.00 am">6.00 am</option>
+                                                        <option value="7.00 am">7.00 am</option>
+                                                        <option value="8.00 am">8.00 am</option>
+                                                        <option value="9.00 am">9.00 am</option>
+                                                        <option value="10.00 am">10.00 am</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label for="openingTimeSelect">closing Time</label>
+                                                    <select class="form-control" id="closing" name="closing">
+                                                        <option value="5.00 pm">5.00 pm</option>
+                                                        <option value="6.00 pm">6.00 pm</option>
+                                                        <option value="7.00 pm">7.00 pm</option>
+                                                        <option value="8.00 pm">8.00 pm</option>
+                                                        <option value="9.00 pm">9.00 pm</option>
+                                                        <option value="10.00 pm">10.00 pm</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                                <div class="db-add-list-wrap">
+                                    <div class="act-title">
+                                        <h5><i class="icofont-ui-social-link"></i>Social Networks:</h5>
+                                    </div>
+                                    <div class="db-add-listing">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Facebook link (Optional)</label>
+                                                    <input type="text" class="form-control filter-input"
+                                                        placeholder="Facebook url" name="Facebook">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Pinterest (Optional)</label>
+                                                    <input type="text" class="form-control filter-input"
+                                                        placeholder="Pinterest url" name="Pinterest">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Twitter link (Optional)</label>
+                                                    <input type="text" class="form-control filter-input"
+                                                        placeholder="Twitter url" name="Twitter">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 text-left">
+                                                <div class="res-box mar-top-10">
+                                                    <input type="checkbox" tabindex="3" class="" name="remember"
+                                                        id="remember">
+                                                    <label for="remember">I've read and accept <a
+                                                            href="#">terms &amp; conditions</a></label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 text-right sm-left">
+
+                                                <button class="btn v8" id="btnSubmit" type="submit">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+            <!--Dashboard content ends-->
+
+            <script>
+                $(document).ready(function () {
+
+                    $("#btnSubmit").click(function (event) {
+                        event.preventDefault();
+                        var form = $('#signUpForm')[0];
+                        var data = new FormData(form);
+                        console.log(data)
+
+                        $.ajax({
+                            type: 'POST',
+                            enctype: 'multipart/form-data',
+                            url: "addlistingdata",
+                            data: data,
+                            processData: false,
+                            contentType: false,
+                            cache: false,
+                            timeout: 600000,
+                            success: function (response) {
+
+                                Swal.fire({
+                                    title: 'Your Listing has been saved!',
+                                    text: response.message,
+                                    icon: 'success',
+                                    confirmButtonText: 'Okay'
+                                }).then((result) => {
+                                    // Check if the "Okay" button was clicked
+                                    if (result.isConfirmed) {
+                                        // Redirect to a new URL
+                                        window.location.href = '/adminhome'; // Replace with the desired URL
+                                    }
+                                });
+
+                            },
+                            error: function (e) {
+                                console.log("ERROR : ", e);
+                                $("#btnSubmit").prop("disabled", false);
+                            }
+                        });
+                        return false;
+                    });
+                });
+
+            </script>
+
+            <!--Dashboard footer starts-->
+            <div class="dash-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>© 2023 MYCITYPEDIA . All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Dashboard footer ends-->
+        </div>
+        <!--Dashboard content Wrapper ends-->
+
+    </div>
+
+    <script>
+        var imgUpload = document.getElementById('upload_imgs')
+            , imgPreview = document.getElementById('img_preview')
+            , imgUploadForm = document.getElementById('img-upload-form')
+            , totalFiles
+            , previewTitle
+            , previewTitleText
+            , img;
+
+        imgUpload.addEventListener('change', previewImgs, false);
+
+        function previewImgs(event) {
+            totalFiles = imgUpload.files.length;
+
+            if (!!totalFiles) {
+                imgPreview.classList.remove('quote-imgs-thumbs--hidden');
+                previewTitle = document.createElement('p');
+                previewTitle.style.fontWeight = 'bold';
+                previewTitleText = document.createTextNode(totalFiles + ' Total Images Selected');
+                previewTitle.appendChild(previewTitleText);
+                imgPreview.appendChild(previewTitle);
+            }
+
+            for (var i = 0; i < totalFiles; i++) {
+                img = document.createElement('img');
+                img.src = URL.createObjectURL(event.target.files[i]);
+                img.classList.add('img-preview-thumb');
+                imgPreview.appendChild(img);
+            }
+        }
+    </script>
+    <!-- Plugin JS-->
+    <script src="../static/js/plugin.js"></script>
+    <!--Perfect Scrollbar JS-->
+    <script src="../static/js/perfect-scrollbar.min.js"></script>
+    <!--google maps-->
+   
+    <script src="../static/js/main.js"></script>
+    <!-- Dashboard JS-->
+    <script src="../static/js/dashboard.js"></script>
+</body>
+
+
+<!-- Mirrored from lion-coders.com/demo/html/listagram/db-add-listing.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Jul 2023 14:57:52 GMT -->
+
+</html>

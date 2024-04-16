@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+
+<!-- Mirrored from lion-coders.com/demo/html/listagram/single-listing-four.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Jul 2023 14:57:38 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+    <!-- Metas -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="LionCoders" />
+    <!-- Links -->
+    <link rel="icon" type="image/png" href="#" />
+    <!-- google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+    <!-- Plugins CSS -->
+    <link href="../static/css/plugin.css" rel="stylesheet" />
+    <!-- style CSS -->
+    <link href="../static/css/style.css" rel="stylesheet" />
+    <!--color switcher css-->
+    <link rel="stylesheet" href="../static/css/switcher/skin-aqua.css" media="screen" id="style-colors" />
+    <!-- Document Title -->
+    <title>MyCitypedia</title>
+    <style>
+        .card-img-top {
+            width: 336px;
+            height: 224px;
+            object-fit: cover; /* To maintain aspect ratio and fill the container */
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+    <div class="preloader js-preloader">
+        <img src="images/preloader.gif" alt="...">
+    </div>-->
+    <div class="page-wrapper fixed-footer">
+        <!--header starts-->
+        <header class="transparent scroll-hide">
+            <!--Main Menu starts-->
+            <div class="site-navbar-wrap v1">
+                <div class="container">
+                    <div class="site-navbar">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 col-6">
+                                <a class="navbar-brand" href="/"><img src="../static/images/f.png" alt="logo"
+                                        class="img-fluid"></a>
+                            </div>
+                            <div class="col-md-8 col-6">
+
+                                <div class="d-lg-none sm-right">
+                                    <a href="#" class="mobile-bar js-menu-toggle">
+                                        <span class="ion-android-menu"></span>
+                                    </a>
+                                </div>
+                                <div class="add-list float-right">
+                                    <a class="btn v8" href="/login">Login</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--mobile-menu starts -->
+                    <div class="site-mobile-menu">
+                        <div class="site-mobile-menu-header">
+                            <div class="site-mobile-menu-close  js-menu-toggle">
+                                <span class="ion-ios-close-empty"></span>
+                            </div>
+                        </div>
+                        <div class="site-mobile-menu-body"></div>
+                    </div>
+                    <!--mobile-menu ends-->
+                </div>
+            </div>
+            <!--Main Menu ends-->
+        </header>
+        <!--Header ends-->
+
+        <!--Listing Details Hero ends-->
+        <div class="breadcrumb-section" style="background-image: url(../static/images/breadcrumb/breadcrumb-1.jpg)">
+            <div class="overlay op-5"></div>
+            <div class="container">
+                <div class="row align-items-center  pad-top-80">
+                    <div class="col-md-6 col-12">
+                        <div class="breadcrumb-menu">
+                            <h2 class="page-title">{{newrow[0][1]}}</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="breadcrumb-menu text-right sm-left">
+                            <ul>
+                                <li class="active"><a href="#">Contact No</a></li>
+                                <li><a href="#">{{newrow[0][3]}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--Listing Details Info starts-->
+        <div class="list-details-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-12">
+
+                        <!--Listing Details starts-->
+                        <div class="list-details-wrap">
+                            <div id="overview" class="list-details-section">
+                                <h4>Overview</h4>
+                                <div class="overview-content">
+                                    <p class="mar-bot-10">{{newrow[0][5]}}</p>
+                                </div>
+
+                            </div>
+                            <div id="gallery" class="list-details-section">
+                                <h4>Gallery</h4>
+                                <!--Carousel Wrapper-->
+                                <div id="carousel-thumb"
+                                    class="carousel slide carousel-fade carousel-thumbnails list-gallery"
+                                    data-ride="carousel">
+                                    <!--Slides-->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="carousel-item active">
+                                            <img class="d-block w-100" src="../{{newrow[0][20]}}" alt="slide">
+                                        </div>
+
+                                    </div>
+                                   
+                                    <ol class="carousel-indicators  list-gallery-thumb">
+                                        <div class="listing-details-slider swiper-container">
+                                            <div class="swiper-wrapper">
+                                                {% for image_path1 in updated_list %}
+                                                <div class="swiper-slide single-listing-slider ">
+                                                    <a  href="#" data-lightbox="listing-slider"><img class="card-img-top" src="../{{ image_path1 }}" alt="..."></a>
+                                                </div>
+                                                {% endfor %}
+                                            </div>
+                                            <div class="listing-details-next slider-btn v4"><i
+                                                    class="ion-arrow-right-c"></i></div>
+                                            <div class="listing-details-prev slider-btn v4"><i
+                                                    class="ion-arrow-left-c"></i></div>
+                                        </div>
+                                    </ol>
+                                </div>
+                                <!--/.Carousel Wrapper-->
+                            </div>
+                            <div id="rooms" class="list-details-section mar-top-80">
+                                <h4>{{newrow[0][1]}}</h4>
+                                <div class="room-type-wrapper">
+                                    <div class="room-type-item">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="../{{updated_list[0]}}"
+                                                    data-lightbox="single-1">
+                                                    <img src="../{{updated_list[0]}}" alt="...">
+                                                </a>
+                                            </div>
+                                            <div class="sidebar-widget">
+                                                <div class="business-time">
+                                                    <div class="business-title">
+                                                        <h6><i class="ion-android-alarm-clock"></i> Business Routine</h6>
+                                                        <span class="float-right">Open Now</span>
+                                                    </div>
+                                                    <ul class="business-hours">
+                                                        <li class="business-open">
+                                                            <span class="day">CONTACT NO</span>
+                                                            <div class="atbd_open_close_time">
+                                                                <span class="time">{{newrow[0][3]}}</span> 
+                                                            </div>
+                                                        </li>
+                                                        <li class="business-open">
+                                                            <span class="day">EMAIL ID</span>
+                                                            <div class="atbd_open_close_time">
+                                                                <span class="time">{{newrow[0][4]}}</span> 
+                                                            </div>
+                                                        </li>
+                                                        <li class="business-open">
+                                                            <span class="day">ADDRESS</span>
+                                                            <div class="atbd_open_close_time">
+                                                                <span class="time">{{newrow[0][6]}}</span> 
+                                                            </div>
+                                                        </li>
+                                                        <li class="business-open">
+                                                            <span class="day">CATEGORY</span>
+                                                            <div class="atbd_open_close_time">
+                                                                <span class="time">{{newrow[0][2]}}</span> 
+                                                            </div>
+                                                        </li>
+                                                       
+                
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div id="reviews" class="list-details-section">
+                                <h4>Reviews </h4>
+                                {% for i in newrow2 %}
+                                <div class="review-box">
+                                    <ul class="review_wrap">
+                                        <li>
+
+                                            <div class="customer-review_wrap">
+                                                <div class="reviewer-img">
+                                                    <img src="../{{i[5]}}" class="img-fluid" alt="...">
+                                                    <p>{{i[1]}}</p>
+                                                  
+                                                </div>
+                                                <div class="customer-content-wrap">
+                                                    <div class="customer-content">
+                                                        <div class="customer-review">
+                                                            <h6>{{i[6]}}</h6>
+                                                           
+                                                        </div>
+                                                        <div class="customer-rating">{{i[3]}}.0</div>
+                                                    </div>
+                                                    <p class="customer-text">{{i[2]}}
+                                                    </p>
+                                                    <div class="review-img">
+                                                        <img src="../{{i[9]}}" alt="...">
+                                                        
+                                                    </div>
+
+                                                    
+                                                </div>
+                                            </div>
+                                          
+                                        </li>
+                                      
+                                    </ul>
+                                </div>
+                                {% endfor %}
+                                
+
+                            </div>
+                           
+                        </div>
+                        <!--Listing Details ends-->
+                        <!--Similar Listing  starts-->
+
+                       
+
+
+                        <!--Similar Listing  ends-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+
+
+                        <div class="listing-sidebar">
+
+                            <div class="sidebar-widget">
+                                <div id="map"></div>
+                                <div class="address">
+                                    <span class="icofont-email"></span>
+                                    <p>{{newrow[0][4]}}</p>
+                                </div>
+                                <div class="address">
+                                    <span class="icofont-ui-contact-list"></span>
+                                    <p>{{newrow[0][3]}}</p>
+                                </div>
+                                <div class="address">
+                                    <span class="icofont-price"></span>
+                                    <p>{{newrow[0][6]}}</p>
+                                </div>
+                            </div>
+
+
+
+                            <div class="sidebar-widget">
+                                <div id="map"></div>
+                                <div class="address">
+                                    <span class="ion-ios-location"></span>
+                                    <p>{{newrow[0][7]}}</p>
+                                </div>
+                                <div class="address">
+                                    <span class="ion-ios-telephone"></span>
+                                    <p>{{newrow[0][3]}}</p>
+                                </div>
+                                <div class="address">
+                                    <span class="ion-android-globe"></span>
+                                    <p>{{newrow[0][11]}}</p>
+                                </div>
+                            </div>
+                            <div class="sidebar-widget">
+                                <div class="business-time">
+                                    <div class="business-title">
+                                        <h6><i class="ion-android-alarm-clock"></i> Business Hours</h6>
+                                        <span class="float-right">Open Now</span>
+                                    </div>
+                                    <ul class="business-hours">
+                                        <li class="business-open">
+                                            <span class="day">WEEK ROUTINE</span>
+                                            <div class="atbd_open_close_time">
+                                                <span class="time">{{newrow[0][14]}}</span> - <span
+                                                    class="time">{{newrow[0][15]}}</span>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+
+
+                            <div class="sidebar-widget listing-tags">
+                                <h4>Tags</h4>
+                                <ul class="list-tags">
+                                    <li><a href="#" class="btn v6 dark">Hotel</a></li>
+                                    <li><a href="#" class="btn v6 dark">Restaurent</a></li>
+                                    <li><a href="#" class="btn v6 dark">Shopping</a></li>
+                                    <li><a href="#" class="btn v6 dark">Beauty & spa</a></li>
+                                    <li><a href="#" class="btn v6 dark">Hospital</a></li>
+                                    <li><a href="#" class="btn v6 dark">Education</a></li>
+
+                                    <li><a href="#" class="btn v6 dark">Event Organizers</a></li>
+                                    <li><a href="#" class="btn v6 dark">Dentists</a></li>
+                                    <li><a href="#" class="btn v6 dark">Estate Agent</a></li>
+                                    <li><a href="#" class="btn v6 dark">GYM</a></li>
+                                    <li><a href="#" class="btn v6 dark">Courier Services</a></li>
+                                    <li><a href="#" class="btn v6 dark">Motor Training Schools</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Listing Details Info ends-->
+        <!-- Scroll to top starts-->
+        <span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
+        <!-- Scroll to top ends-->
+    </div>
+    <!--Page Wrapper ends-->
+    <!--Footer Starts-->
+    <div class="footer-wrapper no-pad-tb footer-fixed v1"
+        style="background-image: url(../static/images/bg/footer-bg-1.png)">
+        <div class="overlay op-1"></div>
+        <div class="footer-top-area section-padding">
+            <div class="container">
+                <div class="row nav-folderized">
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-logo">
+                            <a href="/"> <img src="../static/images/f.png" alt="logo"></a>
+                            <div class="company-desc">
+                                <p>
+                                    A smart city aims to leverage technology, data, and innovation to enhance the
+                                    quality of life for its residents, while also promoting sustainability, efficiency,
+                                    and economic growth.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-content nav">
+                            <h2 class="title">Helpful Links</h2>
+                            <ul class="list">
+                                <li><a class="link-hov style2" href="/Listings/Hotels">Hotel</a></li>
+                                <li><a class="link-hov style2" href="/Listings/Restaurants">Restaurent</a></li>
+                                <li><a class="link-hov style2" href="/Listings/Shopping">Shopping</a></li>
+                                <li><a class="link-hov style2" href="/Listings/Beauty">Beauty & spa</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-content nav">
+                            <h2 class="title">Category</h2>
+                            <ul class="list">
+                                <li><a class="link-hov style2" href="/Listings/Hospitals">Hospital</a></li>
+                                <li><a class="link-hov style2" href="/Listings/Education">Education</a></li>
+                                <li><a class="link-hov style2" href="/Listings/GYM">GYM</a></li>
+                                <li><a class="link-hov style2" href="/Listings/Dentists">Dentists</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-content nav">
+                            <h2 class="title">Contact us</h2>
+                            <ul class="list footer-list">
+                                <li>
+                                    <div class="contact-info">
+                                        <div class="icon">
+                                            <i class="ion-ios-location"></i>
+                                        </div>
+                                        <div class="text">Panvel City</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-info">
+                                        <div class="icon">
+                                            <i class="ion-email"></i>
+                                        </div>
+                                        <div class="text"><a href="#">info@MyCitypedia.com</a></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-info">
+                                        <div class="icon">
+                                            <i class="ion-ios-telephone"></i>
+                                        </div>
+                                        <div class="text">+91 9635023525</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="social-buttons style2">
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+                                <li><a href="#"><i class="ion-social-youtube"></i></a></li>
+                                <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2 text-center">
+                        <p>&copy; 2023 MyCitypedia. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer ends-->
+
+    <!--plugin js-->
+    <script src="../static/js/plugin.js"></script>
+
+    <script src="../static/js/main.js"></script>
+    <!--Scripts ends-->
+</body>
+
+
+<!-- Mirrored from lion-coders.com/demo/html/listagram/single-listing-four.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Jul 2023 14:57:38 GMT -->
+
+</html>

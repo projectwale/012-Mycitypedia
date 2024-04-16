@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+
+<!-- Mirrored from lion-coders.com/demo/html/listagram/faq.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Jul 2023 14:57:48 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+    <!-- Metas -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="LionCoders" />
+    <!-- Links -->
+    <link rel="icon" type="image/png" href="#" />
+    <!-- google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+    <!-- Plugins CSS -->
+    <link href="../static/css/plugin.css" rel="stylesheet" />
+    <!-- style CSS -->
+    <link href="../static/css/style.css" rel="stylesheet" />
+    <link href="../static/css/chat.css" rel="stylesheet" />
+    <!--color switcher css-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/css/switcher/skin-aqua.css" media="screen" id="style-colors" />
+    <!-- Document Title -->
+    <style>
+        /* Style for user messages */
+        .user-message {
+            text-align: right;
+            color: green;
+            font-weight: bold;
+           
+            /* Add a background color */
+            padding: 10px 10px;
+            /* Add padding */
+            margin: 5px 0;
+            /* Add margin to separate messages */
+            border-radius: 10px;
+            /* Add rounded corners */
+        }
+
+        /* Style for bot messages */
+        .bot-message {
+            text-align: left;
+            color: rgb(10, 10, 10);
+            font-weight: bold;
+            
+            /* Add a background color */
+            padding: 5px 10px;
+            /* Add padding */
+            margin: 5px 0;
+            /* Add margin to separate messages */
+            border-radius: 10px;
+            /* Add rounded corners */
+        }
+    </style>
+    <!-- chatbot css end -->
+</head>
+
+<body>
+    <!--Preloader starts-->
+    <!-- <div class="preloader js-preloader">
+        <img src="../static/images/preloader.gif" alt="...">
+    </div> -->
+    <!--Preloader ends-->
+    <!--Page Wrapper starts-->
+    <div class="page-wrapper fixed-footer">
+        <!--header starts-->
+        <header class="header transparent scroll-hide">
+            <!--Main Menu starts-->
+            <div class="site-navbar-wrap v2">
+                <div class="container">
+                    <div class="site-navbar">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 col-6">
+                                <a class="navbar-brand" href="/index"><img src="../static/images/f.png" alt="logo" class="img-fluid"></a>
+                            </div>
+                            <div class="col-md-8 col-6">
+                                <nav class="site-navigation float-left">
+                                    <div class="container">
+                                        <ul class="site-menu js-clone-nav d-none d-lg-block">
+                                          
+                                            <li class="has-children">
+                                                <a href="/addlisting">Add Listing</a>
+                                               
+                                            </li>
+                                            <li class="has-children">
+                                                <a href="/profile">Profile</a>
+                                            </li>
+
+                                            <li class="has-children">
+                                                <a href="/about">About us</a>
+                                               
+                                            </li>
+                                            <li class="has-children">
+                                                <a href="/contact">Contact us</a>
+                                            </li>
+
+                                           
+                                            <li class="has-children">
+                                                <a href="/userlistfull">My Listings</a>
+                                            </li>
+                                            <li class="has-children">
+                                                <a  class="btn v8" style="margin-right: 10px;" href="/logout">Logout</a>
+                                            </li>
+                                            <li class="has-children">
+                                                <a class="btn v8" href="/chatbot">Chat Bot</a>
+                                               
+                                            </li>
+
+                                          
+                                            
+                                           
+                                        </ul>
+                                    </div>
+                                </nav>
+                                
+                               
+                              
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!--mobile-menu starts -->
+                    <div class="site-mobile-menu">
+                        <div class="site-mobile-menu-header">
+                            <div class="site-mobile-menu-close  js-menu-toggle">
+                                <span class="ion-ios-close-empty"></span>
+                            </div>
+                        </div>
+                        <div class="site-mobile-menu-body"></div>
+                    </div>
+                    <!--mobile-menu ends-->
+                </div>
+            </div>
+            <!--Main Menu ends-->
+        </header>
+        <!--Header ends-->
+        
+        <!--FAQ Section starts-->
+        <div class="list-details-section section-padding faq-section pad-bot-90">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <!--Listing Details starts-->
+                        <div class="list-details-wrap">
+                            <div id="booking" class="list-details-section">
+                               
+                                <div id="accordion1" role="tablist">
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <section class="card">
+                                                    <header class="msger-header">
+                                                        <div class="msger-header-title">
+                                                            <i class="fas fa-comment-alt"></i> MYCITYPEDIA CHAT BOT
+                                                        </div>
+                                                        <div class="msger-header-options">
+                                                            <span><i class="fas fa-cog"></i></span>
+                                                        </div>
+                                                    </header>
+
+                                                    <div id="chat-container">
+                                                        <div id="chat-log"></div>
+                                                    </div>
+
+
+                                                    <div class="msger-inputarea">
+                                                        <input type="text" class="msger-input" id="user-input"
+                                                            placeholder="Enter your message...">
+                                                        <button class="msger-send-btn"
+                                                            onclick="sendMessage()">Send</button>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!--FAQ Section starts-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--FAQ Section ends-->
+
+        <script>
+            // Array to store chat history
+            const chatHistory = [];
+
+            // Function to send a user message and receive a bot response
+            function sendMessage() {
+                const userInput = document.getElementById('user-input');
+                const userMessage = userInput.value;
+                userInput.value = ''; // Clear the input field
+
+
+                const chatLog = document.getElementById('chat-log');
+                const messageDiv = document.createElement('div');
+                messageDiv.textContent = userMessage;
+                messageDiv.classList.add('user-message');
+                chatLog.appendChild(messageDiv);
+
+                var data = { userMessage: userMessage };
+                console.log(data);
+                $.ajax({
+                    type: "POST",
+                    url: "getRequest",
+                    data: data,
+                    success: function (data) {
+
+                        const chatLog = document.getElementById('chat-log');
+                        const messageDiv = document.createElement('div');
+                        messageDiv.textContent = data;
+                        messageDiv.classList.add('bot-message');
+                        chatLog.appendChild(messageDiv);
+
+                    },
+                    error: function (e) {
+                        console.log("ERROR : ", e);
+                    }
+                });
+                return false;
+            }
+        </script>
+
+
+        <!-- Scroll to top starts-->
+        <span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
+        <!-- Scroll to top ends-->
+    </div>
+    <!--Page Wrapper ends-->
+
+    <!-- ============================================================== -->
+
+    <!-- ============================================================== -->
+    <!--Footer Starts-->
+    <div class="footer-wrapper no-pad-tb footer-fixed v1" style="background-image: url(../static/images/bg/footer-bg-1.png)">
+        <div class="overlay op-1"></div>
+        <div class="footer-top-area section-padding">
+            <div class="container">
+                <div class="row nav-folderized">
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-logo">
+                            <a href="/index"> <img src="../static/images/f.png" alt="logo"></a>
+                            <div class="company-desc">
+                                <p>
+                                    A smart city aims to leverage technology, data, and innovation to enhance the quality of life for its residents, while also promoting sustainability, efficiency, and economic growth.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-content nav">
+                            <h2 class="title">Helpful Links</h2>
+                            <ul class="list">
+                                <li><a class="link-hov style2" href="/Listings1/Hotels">Hotel</a></li>
+                                <li><a class="link-hov style2" href="/Listings1/Restaurants">Restaurent</a></li>
+                                <li><a class="link-hov style2" href="/Listings1/Shopping">Shopping</a></li>
+                                <li><a class="link-hov style2" href="/Listings1/Beauty">Beauty & spa</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-content nav">
+                            <h2 class="title">Category</h2>
+                            <ul class="list">
+                                <li><a class="link-hov style2" href="/Listings1/Hospitals">Hospital</a></li>
+                                <li><a class="link-hov style2" href="/Listings1/Education">Education</a></li>
+                                <li><a class="link-hov style2" href="/Listings1/GYM">GYM</a></li>
+                                <li><a class="link-hov style2" href="/Listings1/Dentists">Dentists</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-content nav">
+                            <h2 class="title">Contact us</h2>
+                            <ul class="list footer-list">
+                                <li>
+                                    <div class="contact-info">
+                                        <div class="icon">
+                                            <i class="ion-ios-location"></i>
+                                        </div>
+                                        <div class="text">Panvel City</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-info">
+                                        <div class="icon">
+                                            <i class="ion-email"></i>
+                                        </div>
+                                        <div class="text"><a href="#">info@MyCitypedia.com</a></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-info">
+                                        <div class="icon">
+                                            <i class="ion-ios-telephone"></i>
+                                        </div>
+                                        <div class="text">+91 9635023525</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="social-buttons style2">
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+                                <li><a href="#"><i class="ion-social-youtube"></i></a></li>
+                                <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2 text-center">
+                        <p>&copy; 2023 MyCitypedia. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer ends-->
+
+    <!--Scripts starts-->
+    <!--plugin js-->
+    <script src="../static/js/plugin.js"></script>
+
+    <script src="../static/js/main.js"></script>
+    <!--Scripts ends-->
+</body>
+
+
+<!-- Mirrored from lion-coders.com/demo/html/listagram/faq.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Jul 2023 14:57:48 GMT -->
+
+</html>

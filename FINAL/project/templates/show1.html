@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+
+<!-- Mirrored from lion-coders.com/demo/html/listagram/single-listing-four.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Jul 2023 14:57:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- Metas -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="LionCoders" />
+    <!-- Links -->
+    <link rel="icon" type="image/png" href="#" />
+    <!-- google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+     <!-- Plugins CSS -->
+     <link href="../static/css/plugin.css" rel="stylesheet" />
+     <!-- style CSS -->
+     <link href="../static/css/style.css" rel="stylesheet" />
+     <!--color switcher css-->
+     <link rel="stylesheet" href="../static/css/switcher/skin-aqua.css" media="screen" id="style-colors" />
+     <!-- Document Title -->
+    <title>MyCitypedia</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../static/js/jquery-3.3.1.js"></script>
+    <style>
+        .card-img-top {
+            width: 336px;
+            height: 224px;
+            object-fit: cover; /* To maintain aspect ratio and fill the container */
+        }
+    </style>
+</head>
+
+<body>
+   <!--
+    <div class="preloader js-preloader">
+        <img src="images/preloader.gif" alt="...">
+    </div>-->
+    <div class="page-wrapper fixed-footer">
+        <!--header starts-->
+        <header class="transparent scroll-hide">
+            <!--Main Menu starts-->
+            <div class="site-navbar-wrap v1">
+                <div class="container">
+                    <div class="site-navbar">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 col-6">
+                                <a class="navbar-brand" href="/index"><img src="../static/images/f.png" alt="logo" class="img-fluid"></a>
+                            </div>
+                            <div class="col-md-8 col-6">
+                                <nav class="site-navigation float-left">
+                                    <div class="container">
+                                        <ul class="site-menu js-clone-nav d-none d-lg-block">
+                                          
+                                            <li class="has-children">
+                                                <a href="/addlisting">Add Listing</a>
+                                               
+                                            </li>
+                                            <li class="has-children">
+                                                <a href="/profile">Profile</a>
+                                            </li>
+
+                                            <li class="has-children">
+                                                <a href="/about">About us</a>
+                                               
+                                            </li>
+                                            <li class="has-children">
+                                                <a href="/contact">Contact us</a>
+                                            </li>
+
+                                           
+                                            <li class="has-children">
+                                                <a href="/userlistfull">My Listings</a>
+                                            </li>
+                                            <li class="has-children">
+                                                <a  class="btn v8" style="margin-right: 10px;" href="/logout">Logout</a>
+                                            </li>
+                                            <li class="has-children">
+                                                <a class="btn v8" href="/chatbot">Chat Bot</a>
+                                               
+                                            </li>
+                                          
+                                            
+                                           
+                                        </ul>
+                                    </div>
+                                </nav>
+                                
+                               
+                              
+                                
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+            <!--Main Menu ends-->
+        </header>
+        <!--Header ends-->
+        <!--Listing Details Hero starts-->
+         <!--Listing Details Hero starts-->
+         <div class="breadcrumb-section" style="background-image: url(../static/images/breadcrumb/breadcrumb-7.jpg)">
+            <div class="overlay op-5"></div>
+            <div class="container">
+                <div class="row align-items-center  pad-top-80">
+                    <div class="col-md-6 col-12">
+                        <div class="breadcrumb-menu">
+                            <h2 class="page-title">{{newrow[0][1]}}</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="breadcrumb-menu text-right sm-left">
+                            <ul>
+                                <li class="active"><a href="#">Contact No</a></li>
+                                <li><a href="#">{{newrow[0][3]}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Listing Details Hero ends-->
+        <!--Listing Details Info starts-->
+        <div class="list-details-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-12">
+                       
+                        <!--Listing Details starts-->
+                        <div class="list-details-wrap">
+                            <div id="overview" class="list-details-section">
+                                <h4>Overview</h4>
+                                <div class="overview-content">
+                                    <p class="mar-bot-10">{{newrow[0][5]}}</p>
+                                </div>
+                                
+                            </div>
+                            <div id="gallery" class="list-details-section">
+                                <h4>Gallery</h4>
+                                <!--Carousel Wrapper-->
+                                <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails list-gallery" data-ride="carousel">
+                                    <!--Slides-->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="carousel-item active">
+                                            <img class="d-block w-100" src="../{{newrow[0][20]}}" alt="slide">
+                                        </div>
+                                       
+                                    </div>
+                                    <!--Controls starts-->
+                                    
+                                    <!--Controls ends-->
+                                    <ol class="carousel-indicators  list-gallery-thumb">
+                                        <div class="listing-details-slider swiper-container">
+                                            <div class="swiper-wrapper">
+                                                {% for image_path1 in updated_list %}
+                                                <div class="swiper-slide single-listing-slider ">
+                                                    <a href="#" data-lightbox="listing-slider"><img class="card-img-top"
+                                                            src="../{{ image_path1 }}" alt="..."></a>
+                                                </div>
+                                                {% endfor %}
+                                            </div>
+                                            <div class="listing-details-next slider-btn v4"><i
+                                                    class="ion-arrow-right-c"></i></div>
+                                            <div class="listing-details-prev slider-btn v4"><i
+                                                    class="ion-arrow-left-c"></i></div>
+                                        </div>
+                                    </ol>
+                                </div>
+                                <!--/.Carousel Wrapper-->
+                            </div>
+                            <div id="rooms" class="list-details-section mar-top-80">
+                                <h4>{{newrow[0][1]}}</h4>
+                                <div class="room-type-wrapper">
+                                    <div class="room-type-item">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="../{{updated_list[0]}}"
+                                                    data-lightbox="single-1">
+                                                    <img src="../{{updated_list[0]}}" alt="...">
+                                                </a>
+                                            </div>
+                                            <div class="sidebar-widget">
+                                                <div class="business-time">
+                                                    <div class="business-title">
+                                                        <h6><i class="ion-android-alarm-clock"></i> Business Routine</h6>
+                                                        <span class="float-right">Open Now</span>
+                                                    </div>
+                                                    <ul class="business-hours">
+                                                        <li class="business-open">
+                                                            <span class="day">CONTACT NO</span>
+                                                            <div class="atbd_open_close_time">
+                                                                <span class="time">{{newrow[0][3]}}</span> 
+                                                            </div>
+                                                        </li>
+                                                        <li class="business-open">
+                                                            <span class="day">EMAIL ID</span>
+                                                            <div class="atbd_open_close_time">
+                                                                <span class="time">{{newrow[0][4]}}</span> 
+                                                            </div>
+                                                        </li>
+                                                        <li class="business-open">
+                                                            <span class="day">ADDRESS</span>
+                                                            <div class="atbd_open_close_time">
+                                                                <span class="time">{{newrow[0][6]}}</span> 
+                                                            </div>
+                                                        </li>
+                                                        <li class="business-open">
+                                                            <span class="day">CATEGORY</span>
+                                                            <div class="atbd_open_close_time">
+                                                                <span class="time">{{newrow[0][2]}}</span> 
+                                                            </div>
+                                                        </li>
+                                                       
+                
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    
+                                </div>
+                            </div>
+                            <div id="reviews" class="list-details-section">
+                                <h4>Reviews </h4>
+                                {% for i in newrow2 %}
+                                <div class="review-box">
+                                    <ul class="review_wrap">
+                                        <li>
+
+                                            <div class="customer-review_wrap">
+                                                <div class="reviewer-img">
+                                                    <img src="../{{i[5]}}" class="img-fluid" alt="...">
+                                                    <p>{{i[1]}}</p>
+                                                  
+                                                </div>
+                                                <div class="customer-content-wrap">
+                                                    <div class="customer-content">
+                                                        <div class="customer-review">
+                                                            <h6>{{i[6]}}</h6>
+                                                           
+                                                        </div>
+                                                        <div class="customer-rating">{{i[3]}}.0</div>
+                                                    </div>
+                                                    <p class="customer-text">{{i[2]}}
+                                                    </p>
+                                                    <div class="review-img">
+                                                        <img src="../{{i[9]}}" alt="...">
+                                                        
+                                                    </div>
+
+                                                    
+                                                </div>
+                                            </div>
+                                          
+                                        </li>
+                                      
+                                    </ul>
+                                </div>
+                                {% endfor %}
+                                
+
+                            </div>
+                            <div  class="list-details-section mar-top-10">
+                                <h4>Add Review</h4>
+                                <form class="contact-form" action="/Review" method="POST" enctype="multipart/form-data" >
+                                    <h4 class="contact-form__title">
+                                        Rate us and Write a Review
+                                    </h4>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-7 col-12">
+                                            <p class="contact-form__rate">
+                                                Your rating for this listing:
+                                            </p>
+                                            <p class="contact-form__rate-bx">
+                                                <i class="ion-ios-star"></i>
+                                                <i class="ion-ios-star"></i>
+                                                <i class="ion-ios-star"></i>
+                                                <i class="ion-ios-star"></i>
+                                                <i class="ion-ios-star"></i>
+                                            </p>
+                                            <input type="hidden" id="rating" name="rating">
+                                            <input type="hidden" id="BUSSNESS" name="BUSSNESS" value="{{newrow[0][1]}}" >
+                                            <input type="hidden" id="IDNUSS " name="IDNUSS" value="{{newrow[0][0]}}" >
+                                            <p class="contact-form__rate-bx-show">
+                                                <span class="rate-actual">0</span> / 5
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6 col-sm-5 col-12">
+                                            <div class="contact-form__upload-btn xs-left">
+                                                <input class="contact-form__input-file" type="file" id="upload_imgs"
+                                                name="upload_imgs[]" multiple >
+                                                <span>
+                                                    <i class="icofont-upload-alt"></i>
+                                                    Upload Photos
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                       
+                                        <div class="review-img"  id="img_preview" ></div>
+
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <textarea class="contact-form__textarea" name="comment" id="comment" placeholder="Comment"></textarea>
+                                    <input class="btn v1" type="submit"  value="Submit">
+                                </form>
+                            </div>
+                        </div>
+
+                       
+                        <!--Listing Details ends-->
+                        <script>
+                            const stars = document.querySelectorAll('.ion-ios-star');
+                            const ratingInput = document.getElementById('rating');
+                        
+                            stars.forEach((star, index) => {
+                                star.addEventListener('click', () => {
+                                    ratingInput.value = index + 1;
+                                    updateStarDisplay(index + 1);
+                                });
+                            });
+                        
+                            function updateStarDisplay(rating) {
+                                stars.forEach((star, index) => {
+                                    star.classList.toggle('active', index < rating);
+                                });
+                            }
+                        </script>
+
+                        <script>
+                            var imgUpload = document.getElementById('upload_imgs')
+                                , imgPreview = document.getElementById('img_preview')
+                                , imgUploadForm = document.getElementById('img-upload-form')
+                                , totalFiles
+                                , previewTitle
+                                , previewTitleText
+                                , img;
+                    
+                            imgUpload.addEventListener('change', previewImgs, false);
+                    
+                            function previewImgs(event) {
+                                totalFiles = imgUpload.files.length;
+                    
+                                if (!!totalFiles) {
+                                    imgPreview.classList.remove('quote-imgs-thumbs--hidden');
+                                    previewTitle = document.createElement('p');
+                                    previewTitle.style.fontWeight = 'bold';
+                                    previewTitleText = document.createTextNode(totalFiles + ' Total Images Selected');
+                                    previewTitle.appendChild(previewTitleText);
+                                    imgPreview.appendChild(previewTitle);
+                                }
+                    
+                                for (var i = 0; i < totalFiles; i++) {
+                                    img = document.createElement('img');
+                                    img.src = URL.createObjectURL(event.target.files[i]);
+                                    img.classList.add('img-preview-thumb');
+                                    imgPreview.appendChild(img);
+                                }
+                            }
+                        </script>
+                        <script>
+                            document.querySelector('.contact-form').addEventListener('submit', function(event) {
+                                event.preventDefault(); // Prevent the form from submitting the traditional way
+                        
+                                var formData = new FormData(this);
+                        
+                                fetch('/Review', {
+                                    method: 'POST',
+                                    body: formData
+                                })
+                                .then(response => response.text())
+                                .then(data => {
+                                    alert(data); 
+                                    window.location.href = "/show1/{{newrow[0][0]}}";// Show the returned message in an alert
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                });
+                            });
+                        </script>
+                        
+                        <!--Similar Listing  starts-->
+
+                       
+
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+
+
+                        <div class="listing-sidebar">
+                            <div class="sidebar-widget">
+                                <div id="map"></div>
+                                <div class="address">
+                                    <span class="icofont-email"></span>
+                                    <p>{{newrow[0][4]}}</p>
+                                </div>
+                                <div class="address">
+                                    <span class="icofont-ui-contact-list"></span>
+                                    <p>{{newrow[0][3]}}</p>
+                                </div>
+                                <div class="address">
+                                    <span class="icofont-price"></span>
+                                    <p>{{newrow[0][6]}}</p>
+                                </div>
+                            </div>
+
+
+
+                            <div class="sidebar-widget">
+                                <div id="map"></div>
+                                <div class="address">
+                                    <span class="ion-ios-location"></span>
+                                    <p>{{newrow[0][7]}}</p>
+                                </div>
+                                <div class="address">
+                                    <span class="ion-ios-telephone"></span>
+                                    <p>{{newrow[0][3]}}</p>
+                                </div>
+                                <div class="address">
+                                    <span class="ion-android-globe"></span>
+                                    <p>{{newrow[0][11]}}</p>
+                                </div>
+                            </div>
+                            <div class="sidebar-widget">
+                                <div class="business-time">
+                                    <div class="business-title">
+                                        <h6><i class="ion-android-alarm-clock"></i> Business Hours</h6>
+                                        <span class="float-right">Open Now</span>
+                                    </div>
+                                    <ul class="business-hours">
+                                        <li class="business-open">
+                                            <span class="day">WEEK ROUTINE</span>
+                                            <div class="atbd_open_close_time">
+                                                <span class="time">{{newrow[0][14]}}</span> - <span
+                                                    class="time">{{newrow[0][15]}}</span>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                           
+                            
+                            <div class="sidebar-widget listing-tags">
+                                <h4>Tags</h4>
+                                <ul class="list-tags">
+                                    <li><a href="#" class="btn v6 dark">Hotel</a></li>
+                                    <li><a href="#" class="btn v6 dark">Restaurent</a></li>
+                                    <li><a href="#" class="btn v6 dark">Shopping</a></li>
+                                    <li><a href="#" class="btn v6 dark">Beauty & spa</a></li>
+                                    <li><a href="#" class="btn v6 dark">Hospital</a></li>
+                                    <li><a href="#" class="btn v6 dark">Education</a></li>
+                                    
+                                    <li><a href="#" class="btn v6 dark">Event Organizers</a></li>
+                                    <li><a href="#" class="btn v6 dark">Dentists</a></li>
+                                    <li><a href="#" class="btn v6 dark">Estate Agent</a></li>
+                                    <li><a href="#" class="btn v6 dark">GYM</a></li>
+                                    <li><a href="#" class="btn v6 dark">Courier Services</a></li>
+                                    <li><a href="#" class="btn v6 dark">Motor Training Schools</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Listing Details Info ends-->
+        <!-- Scroll to top starts-->
+        <span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
+        <!-- Scroll to top ends-->
+    </div>
+    <!--Page Wrapper ends-->
+    <!--Footer Starts-->
+     <div class="footer-wrapper no-pad-tb footer-fixed v1" style="background-image: url(../static/images/bg/footer-bg-1.png)">
+       <div class="overlay op-1"></div>
+        <div class="footer-top-area section-padding" >
+            <div class="container">
+                <div class="row nav-folderized">
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-logo">
+                            <a href="index.html"> <img src="../static/images/f.png" alt="logo"></a>
+                            <div class="company-desc">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio excepturi nam totam sequi, ipsam consequatur repudiandae libero illum.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-content nav">
+                            <h2 class="title">Helpful Links</h2>
+                            <ul class="list">
+                                <li><a class="link-hov style2" href="#">Login</a></li>
+                                <li><a class="link-hov style2" href="#">My Account</a></li>
+                                <li><a class="link-hov style2" href="#">Add Listing</a></li>
+                                <li><a class="link-hov style2" href="#">Privacy policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-content nav">
+                            <h2 class="title">Category</h2>
+                            <ul class="list">
+                                <li><a class="link-hov style2" href="#">Shop</a></li>
+                                <li><a class="link-hov style2" href="#">Travel</a></li>
+                                <li><a class="link-hov style2" href="#">Sport</a></li>
+                                <li><a class="link-hov style2" href="#">Restaurant</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-content nav">
+                            <h2 class="title">Contact us</h2>
+                            <ul class="list footer-list">
+                                <li>
+                                    <div class="contact-info">
+                                        <div class="icon">
+                                            <i class="ion-ios-location"></i>
+                                        </div>
+                                        <div class="text">13th North Ave, Florida, USA</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-info">
+                                        <div class="icon">
+                                            <i class="ion-email"></i>
+                                        </div>
+                                        <div class="text"><a href="#">info@listagram.com</a></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-info">
+                                        <div class="icon">
+                                            <i class="ion-ios-telephone"></i>
+                                        </div>
+                                        <div class="text">+44 078 767 595</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="social-buttons style2">
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+                                <li><a href="#"><i class="ion-social-youtube"></i></a></li>
+                                <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2 text-center">
+                        <p>&copy; 2019 listagram. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer ends-->
+   
+    <!--plugin js-->
+    <script src="../static/js/plugin.js"></script>
+    
+    <script src="../static/js/main.js"></script>
+    <!--Scripts ends-->
+</body>
+
+
+<!-- Mirrored from lion-coders.com/demo/html/listagram/single-listing-four.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Jul 2023 14:57:38 GMT -->
+</html>
